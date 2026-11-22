@@ -73,6 +73,17 @@ h1,h2,h3{line-height:1.6;margin:0}
 .footer{color:var(--muted);font-size:13.5px;text-align:center;padding:8px 0 34px}
 .footer a{color:var(--muted)}
 
+/* ===== Neon glow (2026-11-22) — gold-on-navy glow, same palette ===== */
+.topbar{box-shadow:0 2px 0 rgba(201,162,39,.6),0 8px 26px rgba(201,162,39,.25)}
+.brand b{text-shadow:0 0 16px rgba(227,199,102,.6)}
+.btn{background:linear-gradient(135deg,var(--gold2),var(--gold) 55%,#a8841c);border:1px solid rgba(255,236,160,.65);box-shadow:0 0 20px rgba(201,162,39,.5),0 0 44px rgba(201,162,39,.22)}
+.btn:hover{background:linear-gradient(135deg,#f0d67e,var(--gold) 55%,#a8841c);box-shadow:0 0 26px rgba(201,162,39,.7),0 0 60px rgba(201,162,39,.3)}
+.btn-ghost:hover{border-color:var(--gold2);box-shadow:0 0 14px rgba(201,162,39,.35)}
+.cta-box{border:1px solid rgba(227,199,102,.45);box-shadow:0 0 30px rgba(201,162,39,.25)}
+.article{border-color:rgba(201,162,39,.42);box-shadow:0 10px 30px rgba(13,31,60,.10),0 0 18px rgba(201,162,39,.16)}
+.rel-grid a{border-color:rgba(201,162,39,.42)}
+.rel-grid a:hover{box-shadow:0 0 22px rgba(201,162,39,.35)}
+
 @media (max-width:640px){
   body{font-size:16px}
   .article{padding:24px 18px}
