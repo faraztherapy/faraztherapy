@@ -1,0 +1,82 @@
+/* فراز تراپی — استایل مشترک صفحات مقالات */
+:root{
+  --navy:#0d1f3c; --navy2:#132c54; --navy3:#1b3a6b;
+  --gold:#c9a227; --gold2:#e3c766; --gold-soft:#f6ecd2;
+  --bg:#f7f5ef; --surface:#ffffff; --surface2:#fbf9f3;
+  --ink:#1a2332; --muted:#5b6575; --line:#e4ddc9;
+  --green:#1e7a4c; --radius:18px;
+  --shadow:0 10px 30px rgba(13,31,60,.10);
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Vazirmatn",Tahoma,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:2;font-size:16.5px}
+a{color:var(--navy)}
+h1,h2,h3{line-height:1.6;margin:0}
+.wrap{max-width:780px;margin:0 auto;padding:0 18px}
+
+/* نوار بالا */
+.topbar{background:linear-gradient(160deg,var(--navy),var(--navy2));color:#fff;padding:14px 0}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.brand{color:#fff;text-decoration:none;font-weight:900;font-size:19px}
+.brand b{color:var(--gold2)}
+.back{color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.4);border-radius:999px;padding:7px 16px;font-size:14px;font-weight:700;white-space:nowrap}
+.back:hover{background:rgba(201,162,39,.2)}
+
+/* مسیر */
+.crumb{font-size:13.5px;color:var(--muted);margin:22px 0 0}
+.crumb a{color:var(--muted);text-decoration:none}
+.crumb a:hover{color:var(--navy)}
+
+/* کارت مقاله */
+.article{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:34px 30px;margin:14px 0 30px}
+.tag{display:inline-block;background:var(--gold-soft);color:#7a5c05;border:1px solid #e8d9a8;border-radius:999px;padding:3px 13px;font-size:13px;font-weight:800}
+.article h1{font-size:27px;font-weight:900;color:var(--navy);margin:14px 0 8px}
+.meta{color:var(--muted);font-size:13.5px;margin-bottom:8px}
+.lede{font-size:18px;font-weight:700;color:var(--navy2);border-inline-start:4px solid var(--gold);padding-inline-start:14px;margin:18px 0 6px}
+.article h2{font-size:21px;font-weight:900;color:var(--navy);margin:30px 0 10px;border-bottom:2px solid var(--gold-soft);padding-bottom:8px}
+.article h3{font-size:18px;font-weight:800;color:var(--navy2);margin:22px 0 8px}
+.article p{margin:0 0 14px}
+.article ul,.article ol{margin:0 0 16px;padding-inline-start:22px}
+.article li{margin-bottom:8px}
+.article li b{color:var(--navy)}
+.article table{width:100%;border-collapse:collapse;margin:8px 0 18px;font-size:15px}
+.article th{background:var(--navy);color:#fff;padding:10px 12px;text-align:start}
+.article td{border:1px solid var(--line);padding:10px 12px}
+.article tr:nth-child(even) td{background:var(--surface2)}
+.note{background:#fdf3e3;border:1px solid #ecc987;border-radius:14px;padding:18px 20px;margin:20px 0}
+.note b{color:var(--navy)}
+.callout{background:var(--gold-soft);border:1px solid #e8d9a8;border-radius:14px;padding:18px 20px;margin:20px 0}
+.callout b{color:var(--navy)}
+
+/* پرسش و پاسخ */
+.faq details{border:1px solid var(--line);border-radius:12px;margin-bottom:10px;background:var(--surface2)}
+.faq summary{cursor:pointer;font-weight:800;color:var(--navy);padding:14px 18px;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq details p{padding:0 18px 14px;margin:0}
+
+/* جعبه مشاوره */
+.cta-box{background:linear-gradient(160deg,var(--navy),var(--navy3));color:#fff;border-radius:var(--radius);padding:28px;text-align:center;margin:30px 0 10px}
+.cta-box h2{color:#fff;border:none;margin:0 0 8px;padding:0}
+.cta-box p{color:#d7deeb;margin:0 0 18px}
+.btn{display:inline-block;background:var(--gold);color:#0d1f3c;font-weight:900;font-size:17px;text-decoration:none;border-radius:999px;padding:12px 30px}
+.btn:hover{background:var(--gold2)}
+.btn-ghost{display:inline-block;background:transparent;color:#fff;border:1px solid rgba(255,255,255,.5);font-weight:800;font-size:15px;text-decoration:none;border-radius:999px;padding:11px 24px;margin-inline-start:8px}
+.stamp{margin-top:16px;font-size:13.5px;color:var(--gold2);font-weight:700}
+
+/* مقالات مرتبط */
+.related h2{font-size:19px}
+.rel-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.rel-grid a{display:block;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 18px;text-decoration:none;color:var(--navy);font-weight:800;font-size:15.5px;line-height:1.8}
+.rel-grid a:hover{border-color:var(--gold)}
+.rel-grid span{display:block;color:var(--muted);font-weight:400;font-size:13.5px}
+
+/* پانویس */
+.footer{color:var(--muted);font-size:13.5px;text-align:center;padding:8px 0 34px}
+.footer a{color:var(--muted)}
+
+@media (max-width:640px){
+  body{font-size:16px}
+  .article{padding:24px 18px}
+  .article h1{font-size:23px}
+  .rel-grid{grid-template-columns:1fr}
+  .btn-ghost{margin:10px 0 0}
+}
