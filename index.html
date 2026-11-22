@@ -262,6 +262,9 @@ footer a{color:var(--gold2);text-decoration:none}
 .menu-panel li a:hover{background:rgba(201,162,39,.18)}
 .menu-panel .menu-cta{margin:14px 16px 0;display:block;text-align:center;background:var(--gold);color:#0d1f3c;border-radius:999px;padding:13px;font-weight:800;text-decoration:none}
 .topbar-tabs{padding:0 0 10px}
+.topbar-checker{padding:10px 0 0}
+.checker-top-btn{display:block;text-align:center;padding:12px 18px;border-radius:999px;background:var(--gold);color:#0d1f3c;font-weight:800;font-size:16px;text-decoration:none}
+.checker-top-btn:focus-visible{outline:3px solid var(--gold2);outline-offset:2px}
 /* ===== Growth checker ===== */
 section[id]{scroll-margin-top:80px}
 .checker{background:var(--navy);color:#fff;border-radius:var(--radius);padding:26px 22px;box-shadow:var(--shadow)}
@@ -310,9 +313,12 @@ section[id]{scroll-margin-top:80px}
     </a>
     <button class="menu-btn" id="menuBtn" type="button" aria-label="باز کردن منو" aria-expanded="false"><span class="lines"><i></i><i></i><i></i></span> منو</button>
   </div>
+  <div class="wrap topbar-checker">
+    <a class="checker-top-btn" href="#" data-view="guide" data-target="checker">بررسی قد و وزن مناسب سن فرزندم</a>
+  </div>
   <div class="wrap topbar-tabs">
     <nav class="tabs" aria-label="صفحات سایت">
-      <button class="tab-btn active" data-goto="home" type="button">صفحه اصلی — معرفی جناب گلشاه</button>
+      <button class="tab-btn active" data-goto="home" type="button">صفحه اصلی</button>
       <button class="tab-btn" data-goto="guide" type="button">راهنمای تخصصی رشد قد و روند درمان</button>
     </nav>
   </div>
@@ -984,7 +990,7 @@ section[id]{scroll-margin-top:80px}
   overlay.addEventListener('click', closeMenu);
   document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeMenu(); });
 
-  /* ---------- menu navigation: switch view, then scroll to section ---------- */
+  /* ---------- menu + topbar navigation: switch view, then scroll to section ---------- */
   var views = { home: document.getElementById('view-home'), guide: document.getElementById('view-guide') };
   var tabs = document.querySelectorAll('.tab-btn');
   function gotoSection(view, targetId){
@@ -996,7 +1002,7 @@ section[id]{scroll-margin-top:80px}
       if(el){ var y = el.getBoundingClientRect().top + window.pageYOffset - 70; window.scrollTo({top: y, behavior: 'smooth'}); }
     }, 80);
   }
-  panel.querySelectorAll('a[data-target]').forEach(function(a){
+  document.querySelectorAll('a[data-target]').forEach(function(a){
     a.addEventListener('click', function(e){ e.preventDefault(); gotoSection(a.getAttribute('data-view'), a.getAttribute('data-target')); });
   });
 
