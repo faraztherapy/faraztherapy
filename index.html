@@ -300,6 +300,43 @@ section[id]{scroll-margin-top:80px}
 .article-card .go{font-weight:800;color:var(--gold);font-size:14.5px}
 .article-card .date{display:block;font-size:13px;color:var(--muted);margin-bottom:4px}
 
+/* ===== Neon glow (2026-11-22) — gold-on-navy glow, same palette, lit-up look ===== */
+:root{--glow:0 0 20px rgba(201,162,39,.5),0 0 44px rgba(201,162,39,.22);--glow-soft:0 0 14px rgba(201,162,39,.35)}
+/* gold buttons: gradient + glow */
+.btn-gold,.checker-top-btn,.checker-btn,.menu-panel .menu-cta,.result-links a.gold-link{background:linear-gradient(135deg,var(--gold2) 0%,var(--gold) 55%,#a8841c 100%);border:1px solid rgba(255,236,160,.65);box-shadow:var(--glow)}
+.btn-gold:hover,.checker-top-btn:hover,.checker-btn:hover,.menu-panel .menu-cta:hover,.result-links a.gold-link:hover{box-shadow:0 0 26px rgba(201,162,39,.7),0 0 60px rgba(201,162,39,.3)}
+.sticky-cta a{background:linear-gradient(135deg,var(--gold2) 0%,var(--gold) 55%,#a8841c 100%);border:1px solid rgba(255,236,160,.65);box-shadow:0 0 24px rgba(201,162,39,.6),0 10px 26px rgba(0,0,0,.28)}
+/* top bar: glowing gold line under it */
+.topbar{box-shadow:0 4px 18px rgba(0,0,0,.18),0 2px 0 rgba(201,162,39,.6),0 8px 28px rgba(201,162,39,.25)}
+.brand-mark{box-shadow:0 0 14px rgba(201,162,39,.5)}
+.tab-btn.active{background:linear-gradient(135deg,var(--gold2),var(--gold) 60%,#a8841c);box-shadow:var(--glow)}
+.tab-btn:hover{border-color:var(--gold2);box-shadow:var(--glow-soft)}
+.menu-btn{border-color:rgba(227,199,102,.6);box-shadow:0 0 12px rgba(201,162,39,.25)}
+.menu-btn:hover{box-shadow:var(--glow-soft)}
+.btn-ghost:hover{border-color:var(--gold2);box-shadow:var(--glow-soft)}
+/* hero glow */
+.hero h1 .gold{text-shadow:0 0 22px rgba(227,199,102,.75),0 0 44px rgba(201,162,39,.4)}
+.hero .kicker{box-shadow:0 0 16px rgba(201,162,39,.35)}
+.portrait{border-color:rgba(227,199,102,.5);box-shadow:0 0 26px rgba(201,162,39,.25)}
+/* cards + stats: gold-tinted border, soft glow */
+.stat,.card,.step,.contact-card,.article-card,.toc,.faq{border-color:rgba(201,162,39,.42)}
+.stat,.card,.article-card{box-shadow:0 4px 14px rgba(13,31,60,.06),0 0 18px rgba(201,162,39,.16)}
+.contact-card:hover,.article-card:hover{box-shadow:0 0 22px rgba(201,162,39,.35)}
+.icon-box{box-shadow:0 0 16px rgba(201,162,39,.4);border:1px solid rgba(201,162,39,.5)}
+.param-num{text-shadow:0 0 18px rgba(201,162,39,.55)}
+.result-nums b{text-shadow:0 0 16px rgba(227,199,102,.5)}
+/* navy bands: gold border + glow */
+.quote,.result-band,.cta-band,.guide-hero{border:1px solid rgba(227,199,102,.45);box-shadow:0 0 30px rgba(201,162,39,.25)}
+.free-item{box-shadow:0 0 16px rgba(201,162,39,.2)}
+/* growth checker: strongest glow, it is the key tool */
+.checker{border:1px solid rgba(227,199,102,.6);box-shadow:0 0 0 1px rgba(201,162,39,.25),0 0 36px rgba(201,162,39,.38),0 18px 44px rgba(0,0,0,.35)}
+.checker h2{text-shadow:0 0 20px rgba(227,199,102,.6)}
+.sex-toggle button.sel{box-shadow:var(--glow)}
+.checker-form select:focus,.checker-form input:focus{outline:none;border-color:var(--gold2);box-shadow:0 0 0 3px rgba(201,162,39,.35)}
+/* menu panel + footer */
+.menu-panel{border-inline-start:1px solid rgba(227,199,102,.5);box-shadow:-8px 0 30px rgba(0,0,0,.3),-4px 0 24px rgba(201,162,39,.2)}
+footer{border-top:1px solid rgba(227,199,102,.5);box-shadow:0 -4px 26px rgba(201,162,39,.18)}
+
 </style>
 </head>
 <body>
