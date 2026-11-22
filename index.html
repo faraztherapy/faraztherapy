@@ -115,7 +115,7 @@ nav.tabs{display:flex;gap:8px;flex-wrap:wrap}
 .btn-navy{background:var(--navy);color:#fff}
 .btn-navy:hover{background:var(--navy3)}
 .portrait{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);border-radius:24px;padding:28px;text-align:center}
-.portrait .photo{width:100%;height:300px;aspect-ratio:850 / 730;object-fit:cover;object-position:50% 30%;border-radius:16px;margin-bottom:16px;border:1px solid rgba(255,255,255,.25);display:block}
+.portrait .photo{width:100%;max-width:240px;height:auto;aspect-ratio:1/1;object-fit:cover;object-position:50% 30%;border-radius:16px;margin:0 auto 16px;border:1px solid rgba(255,255,255,.25);display:block}
 .portrait h2{font-size:22px}
 .portrait .role{color:var(--gold2);font-weight:700;font-size:14.5px}
 .portrait p{color:#c8d2e4;font-size:14.5px;margin-top:10px}
@@ -157,11 +157,14 @@ section[id]{scroll-margin-top:170px}
 
 /* contact */
 .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}
-.contact-card{display:flex;flex-direction:column;gap:4px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px;text-decoration:none;min-height:44px;transition:transform .15s ease,border-color .15s ease}
-.contact-card:hover{transform:translateY(-3px);border-color:var(--gold)}
+.contact-card{display:flex;flex-direction:row;align-items:center;gap:14px;color:#fff;border-radius:var(--radius);padding:20px 22px;text-decoration:none;min-height:44px;transition:transform .15s ease,border-color .15s ease,box-shadow .15s ease}
+.contact-card:hover{transform:translateY(-3px);border-color:rgba(255,255,255,.65)}
 .contact-card b{font-size:18px}
-.contact-card span{color:var(--muted);font-size:14px;direction:ltr;text-align:end}
-.contact-card .go{color:var(--gold);font-weight:800;font-size:14px;margin-top:6px}
+.contact-text{display:flex;flex-direction:column;gap:4px;flex:1;min-width:0}
+.contact-text span{color:rgba(255,255,255,.88);font-size:14px;direction:ltr;text-align:end}
+.contact-card .go{color:#fff;font-weight:800;font-size:14px;margin-top:6px}
+.contact-logo{flex:none;width:56px;height:56px;border-radius:16px;background:#fff;display:grid;place-items:center;box-shadow:0 4px 14px rgba(0,0,0,.25)}
+.contact-logo svg{width:32px;height:32px;display:block}
 
 /* ---------- Page 2 ---------- */
 .guide-hero{background:linear-gradient(160deg,var(--navy),var(--navy3));color:#fff;padding:48px 0}
@@ -268,7 +271,6 @@ footer a{color:var(--gold2);text-decoration:none}
 /* ===== Growth checker ===== */
 section[id]{scroll-margin-top:80px}
 .checker{background:var(--navy);color:#fff;border-radius:var(--radius);padding:26px 22px;box-shadow:var(--shadow)}
-.checker .tag{background:var(--gold);color:#0d1f3c}
 .checker h2{color:#fff}
 .checker .lead{color:#dbe2ef}
 .checker-form{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));margin-top:18px}
@@ -339,6 +341,24 @@ section[id]{scroll-margin-top:80px}
 /* menu panel + footer */
 .menu-panel{border-inline-start:1px solid rgba(227,199,102,.5);box-shadow:-8px 0 30px rgba(0,0,0,.3),-4px 0 24px rgba(201,162,39,.2)}
 footer{border-top:1px solid rgba(227,199,102,.5);box-shadow:0 -4px 26px rgba(201,162,39,.18)}
+
+/* ===== Brand cards (2026-11-22) — each app in its own brand color + logo ===== */
+.contact-card.wa{background:linear-gradient(135deg,#25d366,#128c7e);border:1px solid rgba(255,255,255,.35);box-shadow:0 0 24px rgba(37,211,102,.4)}
+.contact-card.tg{background:linear-gradient(135deg,#37aee2,#1e96c8);border:1px solid rgba(255,255,255,.35);box-shadow:0 0 24px rgba(34,158,217,.45)}
+.contact-card.bale{background:linear-gradient(135deg,#00b578,#00875a);border:1px solid rgba(255,255,255,.35);box-shadow:0 0 24px rgba(0,181,120,.4)}
+.contact-card.eitaa{background:linear-gradient(135deg,#f58220,#e56b00);border:1px solid rgba(255,255,255,.35);box-shadow:0 0 24px rgba(245,130,32,.45)}
+.contact-card.rubika{background:linear-gradient(135deg,#f43f4e,#d81e2c);border:1px solid rgba(255,255,255,.35);box-shadow:0 0 24px rgba(230,46,61,.45)}
+/* checker title: neon red, urgent */
+.checker h2{color:#ff5252;text-shadow:0 0 16px rgba(255,60,60,.85),0 0 42px rgba(255,0,0,.5)}
+/* results links: brand colors + logo chip */
+.result-links a{gap:10px}
+.result-links a .rl-logo{flex:none;width:34px;height:34px;border-radius:10px;background:#fff;display:grid;place-items:center;box-shadow:0 2px 8px rgba(0,0,0,.2)}
+.result-links a .rl-logo svg{width:20px;height:20px;display:block}
+.result-links a.tg{background:linear-gradient(135deg,#37aee2,#1e96c8);border-color:rgba(255,255,255,.4);box-shadow:0 0 20px rgba(34,158,217,.45)}
+.result-links a.eitaa{background:linear-gradient(135deg,#f58220,#e56b00);border-color:rgba(255,255,255,.4);box-shadow:0 0 20px rgba(245,130,32,.45)}
+.result-links a.rubika{background:linear-gradient(135deg,#f43f4e,#d81e2c);border-color:rgba(255,255,255,.4);box-shadow:0 0 20px rgba(230,46,61,.45)}
+.result-links a.bale{background:linear-gradient(135deg,#00b578,#00875a);border-color:rgba(255,255,255,.4);box-shadow:0 0 20px rgba(0,181,120,.4)}
+.result-links a.tg:hover,.result-links a.eitaa:hover,.result-links a.rubika:hover,.result-links a.bale:hover{filter:brightness(1.08);border-color:rgba(255,255,255,.7)}
 
 </style>
 </head>
@@ -497,20 +517,25 @@ footer{border-top:1px solid rgba(227,199,102,.5);box-shadow:0 -4px 26px rgba(201
         <p>برای دریافت مشاوره رایگان، کافی است در <b>واتساپ مستقیم جناب گلشاه</b> کلمه «مشاوره» را بفرستید. محتوای آموزشی روزانه رشد قد هم در کانال‌های زیر منتشر می‌شود.</p>
       </div>
       <div class="contact-grid">
-        <a class="contact-card" href="https://wa.me/message/LVEEE3SK6LFZB1" target="_blank" rel="noopener" style="border-color:var(--gold);background:var(--gold-soft)">
-          <b>واتساپ — مشاوره رایگان</b><span>wa.me · پیام مستقیم به جناب گلشاه</span><span class="go">فرستادن کلمه «مشاوره» ←</span>
+        <a class="contact-card wa" href="https://wa.me/message/LVEEE3SK6LFZB1" target="_blank" rel="noopener">
+          <span class="contact-text"><b>واتساپ — مشاوره رایگان</b><span>wa.me · پیام مستقیم به جناب گلشاه</span><span class="go">فرستادن کلمه «مشاوره» ←</span></span>
+          <span class="contact-logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="#25d366" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></span>
         </a>
-        <a class="contact-card" href="https://t.me/faraz_thraphy" target="_blank" rel="noopener">
-          <b>تلگرام</b><span>t.me/faraz_thraphy</span><span class="go">عضویت در کانال ←</span>
+        <a class="contact-card tg" href="https://t.me/faraz_thraphy" target="_blank" rel="noopener">
+          <span class="contact-text"><b>تلگرام</b><span>t.me/faraz_thraphy</span><span class="go">عضویت در کانال ←</span></span>
+          <span class="contact-logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="#229ed9" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></span>
         </a>
-        <a class="contact-card" href="http://ble.ir/dr_golshah" target="_blank" rel="noopener">
-          <b>بله</b><span>ble.ir/dr_golshah</span><span class="go">عضویت در کانال ←</span>
+        <a class="contact-card bale" href="http://ble.ir/dr_golshah" target="_blank" rel="noopener">
+          <span class="contact-text"><b>بله</b><span>ble.ir/dr_golshah</span><span class="go">عضویت در کانال ←</span></span>
+          <span class="contact-logo" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><text x="12" y="12" text-anchor="middle" dominant-baseline="central" font-family="Vazirmatn,Tahoma,sans-serif" font-size="15" font-weight="900" fill="#00a651">ب</text></svg></span>
         </a>
-        <a class="contact-card" href="https://eitaa.com/faraz_thraphy" target="_blank" rel="noopener">
-          <b>ایتا</b><span>eitaa.com/faraz_thraphy</span><span class="go">عضویت در کانال ←</span>
+        <a class="contact-card eitaa" href="https://eitaa.com/faraz_thraphy" target="_blank" rel="noopener">
+          <span class="contact-text"><b>ایتا</b><span>eitaa.com/faraz_thraphy</span><span class="go">عضویت در کانال ←</span></span>
+          <span class="contact-logo" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><text x="12" y="12" text-anchor="middle" dominant-baseline="central" font-family="Vazirmatn,Tahoma,sans-serif" font-size="15" font-weight="900" fill="#f58220">ا</text></svg></span>
         </a>
-        <a class="contact-card" href="https://rubika.ir/faraz_thraphy" target="_blank" rel="noopener">
-          <b>روبیکا</b><span>rubika.ir/faraz_thraphy</span><span class="go">عضویت در کانال ←</span>
+        <a class="contact-card rubika" href="https://rubika.ir/faraz_thraphy" target="_blank" rel="noopener">
+          <span class="contact-text"><b>روبیکا</b><span>rubika.ir/faraz_thraphy</span><span class="go">عضویت در کانال ←</span></span>
+          <span class="contact-logo" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><text x="12" y="12" text-anchor="middle" dominant-baseline="central" font-family="Vazirmatn,Tahoma,sans-serif" font-size="15" font-weight="900" fill="#e62e3d">ر</text></svg></span>
         </a>
       </div>
       <div style="text-align:center;margin-top:34px">
@@ -566,7 +591,6 @@ footer{border-top:1px solid rgba(227,199,102,.5);box-shadow:0 -4px 26px rgba(201
   <section id="checker">
     <div class="wrap">
       <div class="checker">
-        <div class="tag">ابزار آنلاین</div>
         <h2>بررسی وضعیت آنلاین قد و وزن مناسب سن فرزندم</h2>
         <p class="lead">سن و جنسیت فرزندتان را وارد کنید تا ببینید در این سن، قد و وزن او باید چقدر باشد. این اعداد بر اساس جدول مرجع جهانی رشد قد و وزن کودکان و نوجوانان است.</p>
         <div class="checker-form">
@@ -854,10 +878,10 @@ footer{border-top:1px solid rgba(227,199,102,.5);box-shadow:0 -4px 26px rgba(201
           <p>برای دیدن نتایج، وارد یکی از کانال‌های زیر شوید و بخش نتایج و رضایت خانواده‌ها را ببینید.</p>
         </div>
         <div class="result-links">
-          <a class="gold-link" href="https://t.me/faraz_thraphy" target="_blank" rel="noopener">دیدن نتایج در تلگرام ←</a>
-          <a href="https://eitaa.com/faraz_thraphy" target="_blank" rel="noopener">دیدن نتایج در ایتا ←</a>
-          <a href="https://rubika.ir/faraz_thraphy" target="_blank" rel="noopener">دیدن نتایج در روبیکا ←</a>
-          <a href="http://ble.ir/dr_golshah" target="_blank" rel="noopener">دیدن نتایج در بله ←</a>
+          <a class="tg" href="https://t.me/faraz_thraphy" target="_blank" rel="noopener"><span class="rl-logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="#229ed9" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></span>دیدن نتایج در تلگرام ←</a>
+          <a class="eitaa" href="https://eitaa.com/faraz_thraphy" target="_blank" rel="noopener"><span class="rl-logo" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><text x="12" y="12" text-anchor="middle" dominant-baseline="central" font-family="Vazirmatn,Tahoma,sans-serif" font-size="15" font-weight="900" fill="#f58220">ا</text></svg></span>دیدن نتایج در ایتا ←</a>
+          <a class="rubika" href="https://rubika.ir/faraz_thraphy" target="_blank" rel="noopener"><span class="rl-logo" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><text x="12" y="12" text-anchor="middle" dominant-baseline="central" font-family="Vazirmatn,Tahoma,sans-serif" font-size="15" font-weight="900" fill="#e62e3d">ر</text></svg></span>دیدن نتایج در روبیکا ←</a>
+          <a class="bale" href="http://ble.ir/dr_golshah" target="_blank" rel="noopener"><span class="rl-logo" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><text x="12" y="12" text-anchor="middle" dominant-baseline="central" font-family="Vazirmatn,Tahoma,sans-serif" font-size="15" font-weight="900" fill="#00a651">ب</text></svg></span>دیدن نتایج در بله ←</a>
         </div>
       </div>
     </div>
