@@ -1023,11 +1023,34 @@ footer{border-top:1px solid rgba(227,199,102,.5);box-shadow:0 -4px 26px rgba(201
 (function(){
   var views = { home: document.getElementById('view-home'), guide: document.getElementById('view-guide') };
   var tabs = document.querySelectorAll('.tab-btn');
-  function goto(name){
+  function setHash(h){
+    try{ history.replaceState(null, '', h ? '#'+h : location.pathname + location.search); }catch(e){}
+  }
+  function goto(name, opts){
+    opts = opts || {};
     Object.keys(views).forEach(function(k){ views[k].classList.toggle('active', k===name); });
     tabs.forEach(function(t){ t.classList.toggle('active', t.getAttribute('data-goto')===name); });
-    window.scrollTo({top:0, behavior:'smooth'});
+    if(!opts.keepHash){ setHash(name==='guide' ? 'guide' : ''); }
+    if(!opts.noScroll){ window.scrollTo({top:0, behavior: opts.instant ? 'auto' : 'smooth'}); }
   }
+  /* Deep links: #guide opens the guide view; #checker, #articles, #g-plates ...
+     open the view that contains that section and scroll to it. Makes the guide
+     content (checker, articles hub, pillar sections) directly linkable/shareable. */
+  function applyHash(instant){
+    var h = (location.hash || '').replace(/^#/, '');
+    if(!h){ return; }
+    if(h==='home'){ goto('home', {keepHash:true, instant:instant}); return; }
+    if(h==='guide'){ goto('guide', {keepHash:true, instant:instant}); return; }
+    var el = document.getElementById(h);
+    if(!el){ return; }
+    var view = el.closest('.view');
+    var name = (view && view.id === 'view-guide') ? 'guide' : 'home';
+    goto(name, {keepHash:true, noScroll:true});
+    var y = el.getBoundingClientRect().top + window.pageYOffset - 70;
+    window.scrollTo({top:y, behavior: instant ? 'auto' : 'smooth'});
+  }
+  if(location.hash){ applyHash(true); }
+  window.addEventListener('hashchange', function(){ applyHash(false); });
   document.querySelectorAll('[data-goto]').forEach(function(el){
     el.addEventListener('click', function(e){
       var target = el.getAttribute('data-goto');
@@ -1035,7 +1058,7 @@ footer{border-top:1px solid rgba(227,199,102,.5);box-shadow:0 -4px 26px rgba(201
       goto(target);
     });
   });
-  // In-guide anchor links: ensure guide view is active (it is, since TOC lives there)
+  // FAQ accordion toggles
   document.querySelectorAll('.faq-q').forEach(function(btn){
     btn.addEventListener('click', function(){
       var item = btn.parentElement;
@@ -1066,6 +1089,7 @@ footer{border-top:1px solid rgba(227,199,102,.5);box-shadow:0 -4px 26px rgba(201
   function gotoSection(view, targetId){
     Object.keys(views).forEach(function(k){ views[k].classList.toggle('active', k === view); });
     tabs.forEach(function(t){ t.classList.toggle('active', t.getAttribute('data-goto') === view); });
+    try{ history.replaceState(null, '', '#' + targetId); }catch(e){}
     closeMenu();
     setTimeout(function(){
       var el = document.getElementById(targetId);
