@@ -334,6 +334,14 @@ section[id]{scroll-margin-top:80px}
     .ref-img{width:100%;height:auto;display:block;border-radius:12px}
 .ref-card h3{margin:0 0 4px;color:var(--navy)}
 .ref-card p{margin:0 0 12px;font-size:13.5px;color:var(--muted)}
+.growth-table-wrap{margin-top:16px;max-height:340px;overflow:auto;border:1px solid #e3e8f0;border-radius:12px}
+.growth-table{width:100%;border-collapse:collapse;font-size:14px;text-align:center;min-width:520px}
+.growth-table caption{font-weight:800;color:var(--navy);padding:10px 8px;text-align:right;font-size:14.5px}
+.growth-table th,.growth-table td{padding:8px 6px;border-bottom:1px solid #eef1f6}
+.growth-table thead th{position:sticky;top:0;background:var(--navy);color:#fff;font-size:13px}
+.growth-table tbody th{color:var(--navy);text-align:right;white-space:nowrap}
+.growth-table tbody tr:nth-child(even){background:#f7f9fc}
+.growth-table-note{margin:10px 0 0 !important;font-size:12.5px;color:var(--muted)}
 /* ===== Articles hub ===== */
 .articles-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
 .article-card{display:block;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px;text-decoration:none;color:var(--ink);box-shadow:var(--shadow)}
@@ -688,6 +696,40 @@ footer{border-top:1px solid rgba(227,199,102,.5);box-shadow:0 -4px 26px rgba(201
           <h3>جدول مرجع جهانی قد و وزن کودکان و نوجوانان</h3>
           <p>میانگین قد و وزن مناسب برای هر سن و جنسیت — همان جدولی که بررسی بالا بر اساس آن انجام می‌شود. برای بزرگنمایی روی جدول بزنید.</p>
           <a href="images/growth-table.png" target="_blank" rel="noopener"><img class="ref-img" src="images/growth-table.png" alt="جدول مرجع جهانی قد و وزن کودکان و نوجوانان — میانگین قد و وزن پسر و دختر از یک ماهگی تا ۱۸ سالگی" width="1200" height="1612" loading="lazy"></a>
+          <div class="growth-table-wrap">
+            <table class="growth-table">
+              <caption>جدول میانگین قد و وزن مناسب پسر و دختر از یک ماهگی تا ۱۸ سالگی</caption>
+              <thead>
+                <tr><th scope="col">سن</th><th scope="col">قد پسر (سانتی‌متر)</th><th scope="col">وزن پسر (کیلوگرم)</th><th scope="col">قد دختر (سانتی‌متر)</th><th scope="col">وزن دختر (کیلوگرم)</th></tr>
+              </thead>
+              <tbody>
+            <tr><th scope="row">یک ماهگی</th><td>۵۴٫۶</td><td>۴٫۲۹</td><td>۵۲٫۵</td><td>۳٫۹۸</td></tr>
+            <tr><th scope="row">سه ماهگی</th><td>۶۱٫۱</td><td>۵٫۹۸</td><td>۵۹٫۵</td><td>۵٫۴</td></tr>
+            <tr><th scope="row">شش ماهگی</th><td>۶۷٫۸</td><td>۷٫۸۵</td><td>۶۵٫۹</td><td>۷٫۲۱</td></tr>
+            <tr><th scope="row">نه ماهگی</th><td>۷۲٫۲</td><td>۹٫۱۸</td><td>۷۰٫۴</td><td>۸٫۵۶</td></tr>
+            <tr><th scope="row">۱ سال</th><td>۷۶٫۱</td><td>۱۰٫۱۵</td><td>۷۴٫۲</td><td>۹٫۵۲</td></tr>
+            <tr><th scope="row">۱٫۵ سال</th><td>۸۲٫۴</td><td>۱۱٫۴۷</td><td>۸۰٫۹</td><td>۱۰٫۸۲</td></tr>
+            <tr><th scope="row">۲ سال</th><td>۸۶٫۸</td><td>۱۲٫۲۴</td><td>۸۶٫۸</td><td>۱۱٫۸</td></tr>
+            <tr><th scope="row">۳ سال</th><td>۹۴٫۹</td><td>۱۴٫۶۲</td><td>۹۴٫۱</td><td>۱۴٫۱</td></tr>
+            <tr><th scope="row">۴ سال</th><td>۱۰۲٫۹</td><td>۱۶٫۶۹</td><td>۱۰۱٫۶</td><td>۱۵٫۹۶</td></tr>
+            <tr><th scope="row">۵ سال</th><td>۱۰۹٫۹</td><td>۱۸٫۶۷</td><td>۱۰۸٫۴</td><td>۱۷٫۶۶</td></tr>
+            <tr><th scope="row">۶ سال</th><td>۱۱۶٫۱</td><td>۲۰٫۶۹</td><td>۱۱۴٫۶</td><td>۱۹٫۵۲</td></tr>
+            <tr><th scope="row">۷ سال</th><td>۱۲۱٫۷</td><td>۲۲٫۸۵</td><td>۱۲۰٫۶</td><td>۲۱٫۸۴</td></tr>
+            <tr><th scope="row">۸ سال</th><td>۱۲۷٫۰</td><td>۲۵٫۲</td><td>۱۲۶٫۴</td><td>۲۴٫۸۴</td></tr>
+            <tr><th scope="row">۹ سال</th><td>۱۳۲٫۲</td><td>۲۸٫۱۲</td><td>۱۳۲٫۲</td><td>۲۸٫۴۶</td></tr>
+            <tr><th scope="row">۱۰ سال</th><td>۱۳۷٫۵</td><td>۳۱٫۴۴</td><td>۱۳۸٫۶</td><td>۳۲٫۵۵</td></tr>
+            <tr><th scope="row">۱۱ سال</th><td>۱۴۳٫۲</td><td>۳۵٫۲</td><td>۱۴۴٫۸</td><td>۳۹٫۹۵</td></tr>
+            <tr><th scope="row">۱۲ سال</th><td>۱۴۹٫۷</td><td>۳۹٫۷۸</td><td>۱۵۱٫۵</td><td>۴۱٫۵۲</td></tr>
+            <tr><th scope="row">۱۳ سال</th><td>۱۵۶٫۵</td><td>۴۴٫۹۵</td><td>۱۵۷٫۱</td><td>۴۶٫۱</td></tr>
+            <tr><th scope="row">۱۴ سال</th><td>۱۶۲٫۱</td><td>۵۰٫۷۷</td><td>۱۶۰٫۴</td><td>۵۰٫۲۸</td></tr>
+            <tr><th scope="row">۱۵ سال</th><td>۱۶۹٫۰</td><td>۵۶٫۷۱</td><td>۱۶۱٫۸</td><td>۵۲٫۹۸</td></tr>
+            <tr><th scope="row">۱۶ سال</th><td>۱۷۳٫۵</td><td>۶۲٫۱</td><td>۱۶۲٫۴</td><td>۵۵٫۸۹</td></tr>
+            <tr><th scope="row">۱۷ سال</th><td>۱۷۶٫۲</td><td>۶۶٫۲۱</td><td>۱۶۳٫۱</td><td>۵۶٫۶۹</td></tr>
+            <tr><th scope="row">۱۸ سال</th><td>۱۷۶٫۸</td><td>۶۸٫۸۸</td><td>۱۶۳٫۷</td><td>۵۶٫۶۲</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="growth-table-note">اعداد این جدول میانگین هستند؛ قد و وزن دقیق هر کودک با بررسی شرایط خودش مشخص می‌شود.</p>
         </div>
       </div>
     </div>
