@@ -258,6 +258,9 @@ p{margin:0}
 nav.tabs{display:flex;gap:8px;flex-wrap:wrap}
 .tab-btn{min-height:38px;padding:6px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.28);background:transparent;color:#fff;font-family:inherit;font-size:14px;font-weight:700;cursor:pointer}
 .tab-btn.active{background:var(--gold);border-color:var(--gold);color:#0d1f3c}
+/* Tabs now sit on the light page background (outside the navy header) */
+.tabs .tab-btn{color:var(--navy);border-color:rgba(13,31,60,.3)}
+.tabs .tab-btn.active{color:#0d1f3c}
 .tab-btn:focus-visible,.btn:focus-visible,.faq-q:focus-visible{outline:3px solid var(--gold2);outline-offset:2px}
 
 /* ---------- Hero ---------- */
@@ -427,8 +430,8 @@ footer a{color:var(--gold2);text-decoration:none}
 .menu-panel li a{display:block;padding:13px 14px;border-radius:12px;color:#fff;text-decoration:none;font-weight:700;font-size:15.5px;line-height:1.55}
 .menu-panel li a:hover{background:rgba(201,162,39,.18)}
 .menu-panel .menu-cta{margin:14px 16px 0;display:block;text-align:center;background:var(--gold);color:#0d1f3c;border-radius:999px;padding:13px;font-weight:800;text-decoration:none}
-.topbar-tabs{padding:0 0 8px}
-.topbar-checker{padding:8px 0 8px}
+.topbar-tabs{padding:2px 0 8px}
+.topbar-checker{padding:6px 0 2px}
 .checker-top-btn{display:block;text-align:center;padding:10px 14px;border-radius:999px;background:var(--gold);color:#0d1f3c;font-weight:800;font-size:15px;text-decoration:none}
 .checker-top-btn:focus-visible{outline:3px solid var(--gold2);outline-offset:2px}
 /* ===== Growth checker ===== */
@@ -484,12 +487,20 @@ section[id]{scroll-margin-top:80px}
 /* consultation button: bright loud green — stands out from the gold checker button */
 .checker-top-btn.consult{background:linear-gradient(135deg,#00f070,#00c853);color:#0d1f3c;border:1px solid rgba(255,255,255,.65);box-shadow:0 0 22px rgba(0,230,118,.55)}
 .checker-top-btn.consult:hover{box-shadow:0 0 28px rgba(0,230,118,.8)}
+/* Loud consultation button inside the checker result — links to the form */
+.checker-result .btn-consult-loud{display:inline-block;margin-top:10px;min-height:56px;padding:12px 24px;border-radius:999px;background:linear-gradient(135deg,#00f070,#00c853);color:#0d1f3c;border:1px solid rgba(255,255,255,.65);box-shadow:0 0 22px rgba(0,230,118,.55);font-weight:900;font-size:19px;line-height:1.6;text-decoration:none;text-align:center}
+.checker-result .btn-consult-loud:hover{box-shadow:0 0 28px rgba(0,230,118,.8)}
 /* smaller top buttons on phones */
 @media (max-width:600px){
-.topbar-checker{padding:6px 0}
-.topbar-tabs{padding:0 0 6px}
-.checker-top-btn{padding:8px 12px;font-size:14px}
-.tab-btn{min-height:36px;padding:5px 12px;font-size:13px}
+.topbar-in{padding:6px 0}
+.brand-mark{width:36px;height:36px}
+.brand b{font-size:17px}
+.brand small{font-size:11px}
+.menu-btn{min-height:36px;padding:6px 12px;font-size:13.5px}
+.topbar-checker{padding:6px 0 2px}
+.topbar-tabs{padding:2px 0 6px}
+.checker-top-btn{padding:7px 12px;font-size:13.5px}
+.tab-btn{min-height:32px;padding:4px 10px;font-size:12.5px}
 }
 .sticky-cta a{background:linear-gradient(135deg,var(--gold2) 0%,var(--gold) 55%,#a8841c 100%);border:1px solid rgba(255,236,160,.65);box-shadow:0 0 24px rgba(201,162,39,.6),0 10px 26px rgba(0,0,0,.28)}
 /* top bar: glowing gold line under it */
@@ -554,17 +565,18 @@ footer{border-top:1px solid rgba(227,199,102,.5);box-shadow:0 -4px 26px rgba(201
     </a>
     <button class="menu-btn" id="menuBtn" type="button" aria-label="باز کردن منو" aria-expanded="false"><span class="lines"><i></i><i></i><i></i></span> منو</button>
   </div>
-  <div class="wrap topbar-checker">
-    <a class="checker-top-btn" href="#" data-view="guide" data-target="checker">بررسی قد و وزن مناسب سن فرزندم</a>
-    <a class="checker-top-btn consult" href="moshavereh.html" style="margin-top:8px">پر کردن فرم برای مشاوره رشد قد فرزندم</a>
-  </div>
-  <div class="wrap topbar-tabs">
-    <nav class="tabs" aria-label="صفحات سایت">
-      <button class="tab-btn active" data-goto="home" type="button">صفحه اصلی</button>
-      <button class="tab-btn" data-goto="guide" type="button">راهنمای تخصصی رشد قد و روند درمان</button>
-    </nav>
-  </div>
 </header>
+<!-- Top CTAs + tabs sit below the sticky header now, so they scroll away and the sticky bar stays slim -->
+<div class="wrap topbar-checker">
+  <a class="checker-top-btn" href="#" data-view="guide" data-target="checker">بررسی قد و وزن مناسب سن فرزندم</a>
+  <a class="checker-top-btn consult" href="moshavereh.html" style="margin-top:8px">پر کردن فرم برای مشاوره رشد قد فرزندم</a>
+</div>
+<div class="wrap topbar-tabs">
+  <nav class="tabs" aria-label="صفحات سایت">
+    <button class="tab-btn active" data-goto="home" type="button">صفحه اصلی</button>
+    <button class="tab-btn" data-goto="guide" type="button">راهنمای تخصصی رشد قد و روند درمان</button>
+  </nav>
+</div>
 <div class="menu-overlay" id="menuOverlay"></div>
 <nav class="menu-panel" id="menuPanel" aria-label="منوی سایت">
   <div class="menu-head"><b>منوی فراز تراپی</b><button class="menu-close" id="menuClose" type="button" aria-label="بستن منو">×</button></div>
@@ -1190,7 +1202,7 @@ footer{border-top:1px solid rgba(227,199,102,.5);box-shadow:0 -4px 26px rgba(201
     var ageLabel = ageSel.options[ageSel.selectedIndex].textContent;
     var sexLabel = sex === 'boy' ? 'پسر' : 'دختر';
     var html = '<p>در سن <b>' + ageLabel + '</b>، قد مناسب فرزند شما (' + sexLabel + ') باید حدود <span class="result-num">' + faNum(d.h) + ' سانتی‌متر</span> و وزنش حدود <span class="result-num">' + faNum(d.w) + ' کیلوگرم</span> باشد.</p>';
-    var cta = '<a class="btn btn-gold" href="https://wa.me/message/LVEEE3SK6LFZB1" target="_blank" rel="noopener">مشاوره رایگان — روی لینک مشاوره بزنید</a>';
+    var cta = '<a class="btn-consult-loud" href="moshavereh.html">برای مشاوره اینجا ضربه بزنید</a>';
     html += '<div class="result-warn"><b>اگر قد یا وزن فرزند شما از میانگین جدول جهانی پایین‌تر است، برای مشاوره رایگان روی لینک مشاوره بزنید.</b><br>' + cta + '</div>';
     var res = document.getElementById('ckResult');
     res.innerHTML = html;
