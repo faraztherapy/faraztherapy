@@ -98,3 +98,11 @@ h1,h2,h3{line-height:1.6;margin:0}
 .author-box p{margin:0 0 8px}
 .author-box p:last-child{margin:0}
 .author-box a{font-weight:800}
+
+/* نوار شناور مشاوره واتساپ — پایین صفحه، مثل صفحه اصلی (فقط موبایل/تبلت) */
+.sticky-cta{position:fixed;bottom:14px;inset-inline:14px;z-index:60;display:none}
+.sticky-cta a{display:flex;align-items:center;justify-content:center;min-height:52px;background:linear-gradient(135deg,var(--gold2) 0%,var(--gold) 55%,#a8841c 100%);color:#0d1f3c;font-weight:900;font-size:17px;border-radius:16px;text-decoration:none;border:1px solid rgba(255,236,160,.65);box-shadow:0 0 24px rgba(201,162,39,.6),0 10px 26px rgba(0,0,0,.28)}
+@media (max-width:820px){
+  .sticky-cta{display:block}
+  body{padding-bottom:70px}
+}
